@@ -1,0 +1,23 @@
+{
+  "name": "orderview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "controller.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weaseve/orderview.git"
+  },
+  "keywords": [
+    "わんコメ",
+    "onecome"
+  ],
+  "author": "weaseve",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/weaseve/orderview/issues"
+  },
+  "homepage": "https://github.com/weaseve/orderview#readme"
+}
