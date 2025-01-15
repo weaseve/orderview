@@ -1,0 +1,90 @@
+:root {
+  --lcv-name-shadow: var(--lcv-name-shadow-1);
+  --lcv-comment-shadow: var(--lcv-comment-shadow-1);
+}
+.order-view {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.order-row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.total-block {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  color: var(--lcv-text-color);
+  text-shadow: var(--lcv-comment-shadow);
+}
+.index-block {
+  align-content: center;
+  margin-right: 8px;
+  font-weight: bold;
+  color: var(--lcv-name-color);
+  text-shadow: var(--lcv-name-shadow);
+}
+.comment {
+  background-color: var(--lcv-background-color);
+  white-space: nowrap;
+  flex: auto;
+  overflow: hidden;
+  align-items: center;
+}
+.comment-wrap {
+  align-content: center;
+  overflow: hidden;
+}
+.comment-block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.fade-enter-from {
+  opacity: 0;
+}
+.fade-enter-active {
+  transition: all 0.5s;
+}
+.fade-enter-to {
+  opacity: 1;
+}
+.fade-leave-from {
+  opacity: 1;
+}
+.fade-leave-active {
+  transition: all 0.5s;
+}
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+@keyframes scrollAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(0);
+  }
+  80% {
+    transform: translateX(var(--text-scroll-transform-x));
+  }
+  100% {
+    transform: translateX(var(--text-scroll-transform-x));
+  }
+}
+
+.scrolltext {
+  animation-name: scrollAnimation;
+  animation-duration: var(--text-scroll-duration);
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-iteration-count: var(--text-scroll-iteration-count);
+}

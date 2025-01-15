@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="stylesheet" href="./style.css" />
+    <link href=".//assets/css/fontawesome.css" rel="stylesheet" />
+    <link href=".//assets/css/solid.css" rel="stylesheet" />
+  </head>
+  <body hidden>
+    <div id="container" class="order-view">
+      <div id="order-row" class="order-row">
+        <div class="total-block">
+          <i class="fa-solid fa-thumbtack" style="margin: 0 0.2em"></i>{{orderItemList.length}}:</div>
+        <transition
+          name="fade"
+          @after-enter="onFadeAfterEnter"
+          @after-leave="onFadeAfterLeave"
+        >
+          <div class="comment" v-if="animFade">
+            <div class="index-block"><i class="fa-solid fa-user-group"></i>{{showTarget.index}}</div>
+            <div class="avatar">
+              <img
+                alt=""
+                v-if="showTarget.profileImage"
+                :src="showTarget.profileImage"
+              />
+            </div>
+            <div class="comment-wrap">
+              <div
+                class="comment-block"
+                :class="{scrolltext: isScroll}"
+                v-on:animationiteration="onScrollAnimationIteration"
+                v-on:animationend="onScrollAnimationEnd"
+                ref="commentBlock"
+              >
+                <div class="name">{{showTarget.username}}</div>
+                <div class="comment-body">
+                  <div class="comment-text" v-html="showTarget.comment"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </transition>
+      </div>
+    </div>
+    <script src="../__origin/js/vue3.min.js"></script>
+    <script src="../__origin/js/onesdk.js"></script>
+    <script src="./controller.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
